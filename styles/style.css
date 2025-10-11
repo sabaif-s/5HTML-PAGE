@@ -33,13 +33,46 @@ body {
     );
   background-size: var(--grid-size) var(--grid-size);
 }
+/* ====== 🌐 Responsive Root Font Size ====== */
+html {
+  font-size: 16px; /* Default for desktop */
+}
+
+/* Large desktops */
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
 
 /* ====== 🧩 Wrapper ====== */
 .wrapper {
-  width: 90vw; /* ✅ Always 90% of viewport width */
+  width: 90vw;
   max-width: 1360px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
@@ -220,7 +253,7 @@ body {
 /* Medium (Tablets) */
 @media screen and (max-width: 1024px) {
   .wrapper {
-    width: 94vw; /* slightly wider on tablets */
+    width: 94vw;
     padding: 0 1.5rem;
   }
 
@@ -327,7 +360,8 @@ body {
 @media (min-width: 1440px) {
   .wrapper {
     width: 90vw;
-    max-width: none; /* ✅ Let vw handle layout */
+    min-height: 800px;
+    max-width: none;
     padding: 0 2rem;
   }
 
@@ -391,3 +425,331 @@ body {
     height: 340px;
   }
 }
+
+/* ====== 🏛️ Second Section (House of Assembly) ====== */
+.secondContainer {
+  background-color: #fff;
+  width: 100vw;
+  color: #203643;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  min-height: 600px;
+}
+
+.assembly-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Left Side - Main Card */
+.assembly-card {
+  background: #f7f9fa;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 1 1 46%;
+  max-width: 650px;
+}
+
+.assembly-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.assembly-info {
+  padding: 1.5rem 2rem;
+}
+
+.assembly-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #203643;
+  margin-bottom: 0.5rem;
+}
+
+.assembly-desc {
+  color: rgba(32, 54, 67, 0.8);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Date Card */
+.assembly-date-card {
+  background-color: rgba(220, 229, 234, 1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.arrow-date {
+  position: absolute;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #203643;
+  cursor: pointer;
+}
+
+.date-box {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  position: relative;
+  display: flex;
+  text-align: center;
+  border: 1px solid rgba(32, 54, 67, 0.1);
+}
+
+.date-day {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: block;
+  color: #203643;
+}
+
+.date-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
+  background-color: rgba(32, 54, 67, 1);
+}
+
+.date-month {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  display: block;
+  color: #4b6777;
+}
+
+.date-year {
+  font-size: 0.75rem;
+  color: #6b8595;
+  display: block;
+}
+
+.date-month-year {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #203643;
+}
+
+.date-info p {
+  font-size: 0.85rem;
+  color: #607988;
+}
+
+/* ====== 🧭 House of Assembly – Quick Links Section (Updated) ====== */
+
+.assembly-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  width: 100%;
+  width: 46%;
+  align-items: stretch;
+}
+
+.assembly-links-intro {
+  grid-column: 1 / -1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #203643;
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+.link-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem 1.25rem 1.5rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(32, 54, 67, 0.06);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  height: 100%;
+}
+
+.link-card:hover {
+  background-color: #eef2f4;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(32, 54, 67, 0.1);
+}
+
+.link-card svg:first-child {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+}
+
+.link-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #203643;
+  margin-bottom: 0.25rem;
+}
+
+.link-card p {
+  font-size: 0.875rem;
+  color: #4b6777;
+  line-height: 1.5;
+  max-width: 92%;
+}
+
+.arrow-info {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.link-card:hover .arrow-info {
+  transform: translateX(5px);
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #203643;
+}
+
+/* ====== 📱 Responsive Adjustments ====== */
+
+@media (max-width: 1024px) {
+  .assembly-links {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .assembly-links {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .link-card {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+
+  .link-card p {
+    max-width: 100%;
+  }
+
+  .arrow-info {
+    margin-left: auto;
+    align-self: center;
+    transform: none;
+  }
+
+  .link-card:hover .arrow-info {
+    transform: translateX(3px);
+  }
+
+  .assembly-links-intro {
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .link-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .arrow-info {
+    margin-top: 0.5rem;
+  }
+
+  .link-card svg:first-child {
+    width: 24px;
+    height: 24px;
+  }
+
+  .link-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .link-card p {
+    font-size: 0.8rem;
+  }
+}
+
+.secondWrapper {
+  border-radius: 20px;
+  background-color: rgba(244, 244, 244, 1);
+  padding: 30px;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .assembly-section {
+    align-items: center;
+  }
+
+  .assembly-card {
+    text-align: center;
+  }
+
+  .assembly-info {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1440px) {
+  .assembly-links{
+    grid-template-columns: repeat(auto-fit, minmax(270px, 2fr));
+  }
+}
+@media (max-width: 1024px) {
+  .assembly-links{
+    grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+    width: 100%;
+  }
+  .assembly-card{
+    width: 46%;
+    max-width: 550px;
+  }
+}
+@media (max-width: 600px) {
+    
+   .secondWrapper{
+    padding: 10px;
+   }
+   .assembly-date-card{
+    flex-direction: column;
+    gap: 0.5rem;
+   }
+}
+
