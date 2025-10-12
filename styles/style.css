@@ -1097,3 +1097,433 @@ html {
 }
 
 
+/* 
+ Calender Page css
+*/
+/* GLOBAL RESET */
+
+
+
+
+/* HEADER */
+.calendar-header {
+  background: #18313e;
+  color: #fff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+  padding-top: 1.3%;
+  aspect-ratio: 4.88/1;
+  padding-inline: 8.33%;
+}
+
+.calendar-header h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+}
+.calender-divider
+{
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.calendar-breadcrumb {
+  margin-top: 5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+@media screen and (max-width:768px) {
+  .title.calender{
+    text-align: left;
+  }
+}
+
+.calendar-breadcrumb a {
+  color: #d9e6ec;
+  text-decoration: none;
+}
+
+.calendar-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN */
+.calendar-main {
+  /* max-width: 1200px; */
+  padding-inline: 8.3%;
+  width: 100%;
+  margin: 2rem auto;
+   /* background-color: #f8f9fa; */
+  color: #333;
+  /* padding: 0 1rem; */
+}
+
+.calendar-page-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* LAYOUT */
+.calendar-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.calendar-sidebar {
+  width: 30.33%;
+  flex-shrink: 0;
+}
+
+.calendar-content {
+  flex: 1;
+}
+
+/* CALENDAR BOX */
+.calendar-section {
+  background: #fff;
+  border-radius: 1rem;
+   background-color: rgba(244, 244, 244, 1);
+  padding: 1rem;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.calendar-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+.calendar-month select {
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* CALENDAR GRID */
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+   background-color: rgba(244, 244, 244, 1);
+  gap: 0.25rem;
+  margin-top: 0.8rem;
+}
+
+.calendar-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.2rem;
+}
+
+.calendar-row span,
+.calendar-row a {
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.calendar-row a {
+  text-decoration: none;
+  color: #333;
+  background: #f4f6f7;
+}
+
+.calendar-row a:hover {
+  background: #e0eef5;
+}
+
+/* Selected day (default) */
+.calendar-row a[href="#d16"] {
+  background: #00496e;
+  color: white;
+}
+
+/* Click highlight using :target */
+.calendar-row a:target {
+  background: #00496e;
+  color: white;
+}
+
+/* LEGEND */
+.calendar-legend {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.calendar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.calendar-selected { background: #00496e; }
+.calendar-weekend { background: #ccc; }
+
+/* DOWNLOADS */
+.calendar-downloads {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.calendar-download-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f7f9;
+  border-radius: 0.8rem;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+}
+
+.calendar-download-card button {
+  background: #00496e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.calendar-download-card button:hover {
+  background: #03608f;
+}
+
+/* MAIN CONTENT */
+.calendar-update-note {
+  font-size: 0.9rem;
+}
+.calendar-update-note h3
+{
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.custom-note
+{
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+    padding: 0.5rem 1rem;
+  border-radius: 6px;
+background-color: rgba(113, 145, 162, 0.2);
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+.calendar-accordion {
+  margin: 2rem auto;
+}
+
+/* Details wrapper */
+.calendar-accordion details {
+  border-radius: 0.8rem;
+  background: white;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+/* Summary styling */
+.calendar-accordion {
+  margin: 2rem auto;
+}
+
+/* Top-level details only */
+.calendar-accordion > details {
+  border-radius: 0.8rem;
+  background: white;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
+
+/* Remove radius, shadows, and borders for nested details */
+.calendar-accordion details details {
+  border: none;
+  box-shadow: none;
+  margin: 0.5rem 0 0.5rem 1.5rem;
+  padding-left: 0.75rem;
+  background: #fff;
+}
+
+/* Summary styling (both top and nested) */
+.calendar-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f6f8;
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.3s ease;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+/* Remove extra rounding for nested summaries */
+.calendar-accordion details details > summary {
+  background: #f9fafb;
+  padding-left: 1.5rem;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+/* Hover effect */
+.calendar-accordion summary:hover {
+  background: #e9eef3;
+}
+
+/* Remove default triangle marker */
+.calendar-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.summary-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.summary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.summary-text strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.summary-text p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+
+/* Chevron rotation */
+.calendar-accordion summary .chevron {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.calendar-accordion details[open] > summary .chevron {
+  transform: rotate(180deg);
+}
+
+/* Paragraph inside details */
+.calendar-accordion details > p {
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  color: #555;
+  border-top: 1px solid #e3e6ea;
+  border-bottom: 1px solid #e3e6ea;
+}
+
+/* Indentation for inner content */
+.calendar-accordion details > *:not(summary) {
+  padding-left: 2.5rem;
+}
+
+.calendar-accordion details details > *:not(summary) {
+  padding-left: 3rem;
+}
+
+/* List styling */
+.calendar-accordion ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.calendar-accordion li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calendar-accordion li:hover {
+  background: #f8fafc;
+}
+
+/* Optional arrow icon for list items */
+.calendar-accordion li::after {
+  content: "↗";
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #545758;
+  background-color: rgba(220, 229, 234, 1);
+}
+
+
+/* FOOTER */
+.calendar-footer {
+  background: #18313e;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.calendar-footer-links a {
+  color: rgba(255,255,255,0.8);
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.calendar-footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .calendar-layout {
+    flex-direction: column;
+  }
+
+  .calendar-sidebar {
+    width: 100%;
+  }
+
+  .calendar-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .calendar-footer-links a {
+    margin: 0 0.5rem;
+  }
+}
+
+
