@@ -517,6 +517,8 @@ html {
   position: relative;
   display: flex;
   text-align: center;
+  justify-content: flex-start;
+  align-items: center;
   border: 1px solid rgba(32, 54, 67, 0.1);
 }
 
@@ -1061,7 +1063,9 @@ html {
 
 /* Small tablets and large phones */
 @media (max-width: 768px) {
-  
+  .footer-icon{
+    bottom: 90px;
+  }
 }
 
 /* Mobile */
@@ -1150,13 +1154,11 @@ html {
 
 /* MAIN */
 .calendar-main {
-  /* max-width: 1200px; */
   padding-inline: 8.3%;
   width: 100%;
   margin: 2rem auto;
-   /* background-color: #f8f9fa; */
+  max-width: 1920px;
   color: #333;
-  /* padding: 0 1rem; */
 }
 
 .calendar-page-title {
@@ -1199,50 +1201,6 @@ html {
   border: 1px solid #ccc;
 }
 
-/* CALENDAR GRID */
-.calendar-grid {
-  display: flex;
-  flex-direction: column;
-   background-color: rgba(244, 244, 244, 1);
-  gap: 0.25rem;
-  margin-top: 0.8rem;
-}
-
-.calendar-row {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0.2rem;
-}
-
-.calendar-row span,
-.calendar-row a {
-  text-align: center;
-  padding: 0.5rem 0;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-.calendar-row a {
-  text-decoration: none;
-  color: #333;
-  background: #f4f6f7;
-}
-
-.calendar-row a:hover {
-  background: #e0eef5;
-}
-
-/* Selected day (default) */
-.calendar-row a[href="#d16"] {
-  background: #00496e;
-  color: white;
-}
-
-/* Click highlight using :target */
-.calendar-row a:target {
-  background: #00496e;
-  color: white;
-}
 
 /* LEGEND */
 .calendar-legend {
@@ -1266,36 +1224,120 @@ html {
 .calendar-weekend { background: #ccc; }
 
 /* DOWNLOADS */
+/* --- Section Wrapper --- */
 .calendar-downloads {
   margin-top: 2rem;
-  background: #fff;
+  background: #f8f9fa;
+  min-height: 290px;
   border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.08);
+  font-family: system-ui, sans-serif;
 }
 
+.calendar-downloads h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: #1e293b;
+}
+
+.calendar-downloads p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* --- Download Card --- */
 .calendar-download-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #f3f7f9;
+  gap: 1rem;
+  background: #dce5ea;
   border-radius: 0.8rem;
   padding: 0.75rem 1rem;
   margin-top: 1rem;
 }
 
-.calendar-download-card button {
-  background: #00496e;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 0.4rem 0.9rem;
-  cursor: pointer;
+/* Icon */
+.calendar-download-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.calendar-download-card button:hover {
-  background: #03608f;
+/* Text Info */
+.calendar-download-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
+
+.calendar-download-info strong {
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.calendar-download-btn span {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Button */
+.calendar-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  background: white;
+  color: #00496e;
+  border: 1px solid #00496e;
+  border-radius: 1.5rem;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendar-download-btn:hover {
+  background: #00496e;
+  color: white;
+}
+
+/* --- Accordion for other downloads --- */
+.calendar-download-details {
+  background: white;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.calendar-download-details summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #1e293b;
+  list-style: none;
+}
+
+.calendar-download-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.calendar-download-details summary::after {
+  content: "▾";
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.calendar-download-details[open] summary::after {
+  transform: rotate(180deg);
+}
+
 
 /* MAIN CONTENT */
 .calendar-update-note {
@@ -1485,24 +1527,29 @@ align-items: center;
 
 /* FOOTER */
 .calendar-footer {
-  background: #18313e;
-  color: white;
-  padding: 1rem 2rem;
+  color: black;
+  position: relative;
+  padding-inline: 8.3%;
+  padding-bottom: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1920px;
   flex-wrap: wrap;
   gap: 1rem;
+  margin: 0 auto;
 }
 
 .calendar-footer-links a {
   color: rgba(255,255,255,0.8);
+  color: black;
   margin-left: 1rem;
   text-decoration: none;
 }
 
 .calendar-footer-links a:hover {
   color: #fff;
+  color: black;
   text-decoration: underline;
 }
 
@@ -1525,5 +1572,294 @@ align-items: center;
     margin: 0 0.5rem;
   }
 }
+
+/* ===== Popup Styling ===== */
+/* ===== Popup Styling ===== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0; /* start hidden */
+  height: 100%;
+  background: rgba(24, 49, 62, 0.6);
+  overflow: hidden;
+  transition: width 0.4s ease;
+  z-index: 1000;
+}
+
+/* Show popup when targeted */
+.popup-overlay:target {
+  width: 100%;
+}
+
+/* Popup box slides in from the right */
+.popup-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 700px;
+  height: 100%;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px 0 0 16px;
+  overflow-y: auto;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+}
+
+/* When active, slide into view */
+.popup-overlay:target .popup-box {
+  transform: translateX(0);
+}
+
+/* Hide scrollbar */
+.popup-box::-webkit-scrollbar {
+  display: none;
+}
+.popup-box {
+  -ms-overflow-style: none;  /* IE */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Close (Back) button */
+.popup-close {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #18313E;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.popup-close svg {
+  vertical-align: middle;
+}
+
+.popup-close:hover span {
+  text-decoration: underline;
+}
+#lisbon-popup
+{
+  color: #000;
+}
+.popup-volume
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
+  justify-content: center;
+  color: black;
+}
+.popup-volume span.gray
+{
+   color: #7c7c7c;
+}
+.popup-header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Header and Body */
+.popup-header-top h2 {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.popup-header-top h3 {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.popup-body p {
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+/* === Popup Top Bar === */
+.popup-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #E5E9EC;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+/* Back link */
+.popup-close {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: #18313E;
+  font-weight: 600;
+}
+
+.popup-close:hover span {
+  text-decoration: underline;
+}
+
+/* Download button */
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto; /* Push to right side */
+  text-decoration: none;
+  color: #18313E;
+  font-weight: 600;
+  border: 1px solid #E5E9EC;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #F4F8FA;
+}
+@media (max-width: 768px) {
+  .popup-box {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .popup-body {
+    max-height: none;
+    flex-grow: 1;
+  }
+
+  .popup-topbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .popup-close span,
+  .download-btn span {
+    font-size: 0.9rem;
+  }
+}
+/* --- Remove default link styles inside list items --- */
+ul li a {
+  text-decoration: none;
+  color: inherit;            /* Use same color as parent text */
+  display: block;            /* Make it fill the li area for better click */
+  width: 100%;
+  padding: 0.25rem 0;
+}
+
+/* Optional hover feedback (soft background) */
+ul li a:hover {
+  background-color: rgba(24, 49, 62, 0.05); /* light hover shade */
+  border-radius: 4px;
+}
+
+/* Optional: keep consistent spacing for non-links too */
+ul li {
+  list-style: none;
+  padding: 0.25rem 0;
+}
+.date-picker-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .calendar {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: none;
+    z-index: 10;
+  }
+  .calendar {
+  position: relative; /* stays in flow */
+  margin-top: 0.5rem; /* small gap from input */
+  display: none;
+}
+  .calendar.show {
+    display: block;
+  }
+
+  .calendar-header-picker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .calendar-header-picker h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .calendar-header-picker button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .calendar-header-picker button:hover {
+    color: #007bff;
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .day-name {
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 0.85rem;
+  }
+
+  .calendar-day {
+    padding: 0.5rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: background 0.2s, color 0.2s;
+    font-size: 0.9rem;
+  }
+
+  .calendar-day:hover {
+    background: #f0f0f0;
+  }
+
+  .calendar-day.selected {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+
+  .calendar-day.today {
+    border: 1px solid #007bff;
+  }
+  
+
+
 
 
