@@ -16,6 +16,9 @@ html, body {
   background-color: white;
   overflow-x: hidden;
 }
+:root {
+  --grid-size: 35px;
+}
 
 /* ====== Root Font Size ====== */
 html {
