@@ -146,7 +146,6 @@ body {
     background-color: rgba(255, 255, 255, 0.25);
     position: absolute;
     top: 4.43rem;
-    left: 8.3%;
 }
 
 /* ====== 🏛️ Hero Section ====== */
@@ -555,9 +554,6 @@ body {
   .wrapper,.secondContainer {
      padding-inline: 3.5rem;
   }
-  .top-divider{
-    left: 3.5rem;
-  }
 }
 @media screen and (max-width: 1024px) {
   .wrapper,.secondContainer {
@@ -583,10 +579,7 @@ body {
     width: 100%;
     padding-inline: 4%;
   }
-  .top-divider
-  {
-    left: 4%;
-  }
+  
 
   .title {
     font-size: 3rem;
