@@ -920,6 +920,7 @@ body {
   max-width: 1920px;
   height: 60px;
   padding-inline: 8.3%;
+  padding-bottom: 40px;
   position: relative;
   bottom:20px;
   left: 0px;
@@ -927,12 +928,7 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.footer-left {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #151515;
-}
+ 
 
 .footer-links {
   display: flex;
