@@ -314,10 +314,6 @@ body {
     font-size: 2rem;
   }
 }
-
-
-
-/* ====== 🏛️ Second Section (House of Assembly) ====== */
 .secondContainer {
   background-color: #fff;
   width: 100vw;
@@ -329,10 +325,7 @@ body {
   padding-inline: 8.3%;
   min-height: 600px;
 }
-.footer-home.search-white{
-  position: absolute;
-  bottom: 0px;
-}
+ 
 
  
 
@@ -719,7 +712,6 @@ body {
   max-width: 1920px;
   top: 20rem;
   margin: 0 auto;
-  padding-block: 4rem;
 }
 .searchLeft
 {
@@ -1058,10 +1050,6 @@ body {
   }
   .footer-left{
     order: 2;
-  }
-  .search-white{
-    margin-top: 40px;
-    margin-bottom: 40px;
   }
   .searchBox .row{
     justify-content: center;
