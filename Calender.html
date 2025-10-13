@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <header class="calendar-header">
+  <div class="container" >
+     <header class="calendar-header px-responsive">
     <div class="calendar-container">
       <h1>Anguilla Hansard</h1>
       <div class="calender-divider"></div>
@@ -21,7 +22,7 @@
     </div>
   </header>
 
-  <main class="calendar-main">
+  <main class="calendar-main px-responsive">
     <h2 class="calendar-page-title">Hansard</h2>
 
     <div class="calendar-layout">
@@ -59,11 +60,23 @@
 </div>
   </div>
 
-          <div class="calendar-legend">
-            <span class="calendar-dot calendar-selected"></span> Selected day
-            <span class="calendar-dot calendar-content"></span> Days with content
-            <span class="calendar-dot calendar-weekend"></span> Weekend
-          </div>
+        <div class="calendar-legend">
+  <div class="calendar-legend">
+  <label>
+    <input type="radio" name="calendar-legend" class="calendar-dot  radio-btn blue" checked>
+    Selected day
+  </label>
+  <label>
+    <input type="radio" name="calendar-legend" class="calendar-dot calendar-content radio-btn green">
+    Days with content
+  </label>
+  <label>
+    <input type="radio" name="calendar-legend" class="calendar-dot calendar-weekend radio-btn red" >
+    Weekend
+  </label>
+</div>
+
+
         </section>
 
       <section class="calendar-downloads">
@@ -295,6 +308,8 @@
     </div>
   </div>
 </div>
+  </div>
+ 
 <script>
   const dateInput = document.getElementById("dateInput");
   const calendar = document.getElementById("calendar");
@@ -303,42 +318,51 @@
   const prevMonthBtn = document.getElementById("prevMonth");
   const nextMonthBtn = document.getElementById("nextMonth");
 
-  let currentDate = new Date();
-  let selectedDate = new Date(); // Default = today
+  // === State ===
+  let currentDate = new Date();  // current visible month
+  let selectedDate = new Date(); // selected day
 
-  // --- Render Calendar ---
+  // Example: days that have content
+  const contentDays = [3, 7, 12, 15, 22];
+
+  // === Render Calendar ===
   function renderCalendar() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
     const monthNames = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
+      "January","February","March","April","May","June",
+      "July","August","September","October","November","December"
     ];
+
+    // Update header
     monthYear.textContent = `${monthNames[month]} ${year}`;
 
-    // Clear old days
-    const oldDays = calendarGrid.querySelectorAll(".calendar-day");
-    oldDays.forEach(day => day.remove());
+    // Clear previous days
+    calendarGrid.innerHTML = "";
 
+    // Date info
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
-    const startDay = (firstDay.getDay() + 6) % 7; // Monday start
+    const startDay = (firstDay.getDay() + 6) % 7; // Monday = 0
     const totalDays = lastDay.getDate();
 
-    // Empty cells
+    // Fill empty cells
     for (let i = 0; i < startDay; i++) {
       const empty = document.createElement("div");
       calendarGrid.appendChild(empty);
     }
 
-    // Add days
+    // Create day buttons
     for (let i = 1; i <= totalDays; i++) {
       const btn = document.createElement("button");
       btn.classList.add("calendar-day");
       btn.textContent = i;
 
+      const thisDate = new Date(year, month, i);
       const today = new Date();
+
+      // === Highlight today ===
       if (
         i === today.getDate() &&
         month === today.getMonth() &&
@@ -347,6 +371,18 @@
         btn.classList.add("today");
       }
 
+      // === Highlight weekends ===
+      const dayOfWeek = thisDate.getDay();
+      if (dayOfWeek === 0 || dayOfWeek === 6) {
+        btn.classList.add("weekend");
+      }
+
+      // === Highlight days with content ===
+      if (contentDays.includes(i)) {
+        btn.classList.add("has-content");
+      }
+
+      // === Highlight selected date ===
       if (
         i === selectedDate.getDate() &&
         month === selectedDate.getMonth() &&
@@ -355,8 +391,10 @@
         btn.classList.add("selected");
       }
 
+      // === On click: update selected date ===
       btn.addEventListener("click", () => {
         selectedDate = new Date(year, month, i);
+        currentDate = new Date(year, month, 1); // keep view synced
         updateInput();
         renderCalendar();
       });
@@ -365,37 +403,32 @@
     }
   }
 
-  // --- Update input field ---
+  // === Update <input type="date"> ===
   function updateInput() {
-    dateInput.value = selectedDate.toISOString().split("T")[0];
+    const y = selectedDate.getFullYear();
+    const m = String(selectedDate.getMonth() + 1).padStart(2, "0");
+    const d = String(selectedDate.getDate()).padStart(2, "0");
+    dateInput.value = `${y}-${m}-${d}`; // Local date (no timezone shift)
   }
 
-  // --- Controls ---
+  // === Navigation buttons ===
   prevMonthBtn.addEventListener("click", () => {
-    currentDate.setMonth(currentDate.getMonth() - 1);
+    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
     renderCalendar();
   });
 
   nextMonthBtn.addEventListener("click", () => {
-    currentDate.setMonth(currentDate.getMonth() + 1);
+    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
     renderCalendar();
   });
 
-  // dateInput.addEventListener("click", () => {
-  //   calendar.classList.toggle("show");
-  // });
-
-  // document.addEventListener("click", (e) => {
-  //   if (!calendar.contains(e.target) && e.target !== dateInput) {
-  //     calendar.classList.remove("show");
-  //   }
-  // });
-
-  // --- Initialize ---
+  // === Initialize ===
   updateInput();
   renderCalendar();
-  calendar.classList.add("show"); // Show by default
+  calendar.classList.add("show"); // always visible
 </script>
+
+
 
 </body>
 </html>

@@ -5,24 +5,59 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+/* ====== Base Reset ====== */
+html, body {
   height: 100%;
-  width: 100%;
-  max-width: 1920px;
-  margin:0 auto;
-  background-color: white;
-  position: relative;
+  margin: 0;
+  padding: 0;
   font-family: "Inter", sans-serif;
-  color: #fff;
   line-height: 1.6;
+  color: #fff;
+  background-color: white;
   overflow-x: hidden;
-   --grid-size: 2.1875rem;
 }
-/* ====== 🌐 Responsive Root Font Size ====== */
+
+/* ====== Root Font Size ====== */
 html {
-  font-size: 16px; /* Default for desktop */
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
+
+/* ====== Full-width background ====== */
+body {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ====== Main content wrapper (centered, max 1920px) ====== */
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ====== Scrollbar Styling ====== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
 
 /* Large desktops */
 @media (min-width: 1920px) {
@@ -56,7 +91,6 @@ html {
 /* ====== 🧩 Wrapper ====== */
 .wrapper {
   width: 100%;
-  padding-inline: 8.3%;
   background-color: #203643;
    background-image: repeating-linear-gradient(
       to right,
@@ -309,10 +343,9 @@ html {
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: center;
   width: 47.29%;
   max-width: 650px;
-  min-width: 450px;
+  /* min-width: 450px; */
 }
 
 .assembly-image {
@@ -341,8 +374,9 @@ html {
   background-color: rgba(220, 229, 234, 1);
   border-radius: 0.75rem;
   padding: 1rem;
+  padding-right: 40px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
   position: relative;
 }
@@ -364,6 +398,7 @@ html {
   text-align: center;
   justify-content: flex-start;
   align-items: center;
+  max-width: 100px;
   border: 1px solid rgba(32, 54, 67, 0.1);
 }
 
@@ -423,6 +458,7 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 0.5rem;
   width: 48%;
+  min-width: 550px;
   align-items: stretch;
 }
 
@@ -672,12 +708,10 @@ html {
 .searchPage
 {
   position: relative;
-  /* width: 1440px; */
   width: 100%;
-  /* aspect-ratio: 2.84/1; */
   margin: 0 auto;
-  padding-inline: 8.3%;
   padding-bottom: 1.3%;
+  padding-top: 1.25rem;
   max-height: 1000px;
   max-width: 1920px;
   background-color: #18313E;
@@ -995,9 +1029,7 @@ html {
   margin: 0 auto;
   width: 100%;
   max-width: 1920px;
-  padding-top: 1.3%;
-  aspect-ratio: 4.88/1;
-  padding-inline: 8.33%;
+  padding-block: 1.3%;
 }
 
 .calendar-header h1 {
@@ -1016,6 +1048,7 @@ html {
   font-size: 0.85rem;
   opacity: 0.9;
 }
+
 @media screen and (max-width:768px) {
   .title.calender{
     text-align: left;
@@ -1057,10 +1090,6 @@ html {
   min-width: 280px;
 }
 
-.calendar-content {
-  flex: 1;
-}
-
 /* CALENDAR BOX */
 .calendar-section {
   background: #fff;
@@ -1072,6 +1101,7 @@ html {
 
 .calendar-section h3 {
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .calendar-month select {
@@ -1089,24 +1119,17 @@ html {
   flex-wrap: wrap;
   gap: 0.3rem;
   font-size: 0.8rem;
+  margin: 0 auto;
   margin-top: 0.8rem;
 }
-
-.calendar-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.calendar-selected { background: #00496e; }
-.calendar-weekend { background: #ccc; }
 
 /* DOWNLOADS */
 /* --- Section Wrapper --- */
 .calendar-downloads {
+  margin: 0 auto;
+  max-width: 400px;
   margin-top: 2rem;
+
   background: #f8f9fa;
   min-height: 290px;
   border-radius: 1rem;
@@ -1186,6 +1209,105 @@ html {
   background: #00496e;
   color: white;
 }
+/* Layout */
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Label styling */
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* ====== Custom Radio Base ====== */
+.radio-btn {
+  appearance: none;           
+  -webkit-appearance: none;  
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 0.25rem;        
+  border: 2px solid #bbb;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ====== Colors for Each Option ====== */
+.radio-btn.blue   { border-color: rgba(65, 106, 128, 1); }
+.radio-btn.green  { border-color: rgba(220, 229, 234, 1); }
+.radio-btn.red    { border-color: rgba(234, 234, 234, 1); }
+
+/* ====== Checked (selected) state ====== */
+.radio-btn:checked.blue   { background-color: rgba(65, 106, 128, 1); border-color: rgba(65, 106, 128, 1); }
+.radio-btn:checked.green  { background-color:  rgba(65, 106, 128, 1);; border-color: rgba(220, 229, 234, 1);}
+.radio-btn:checked.red    { background-color:  rgba(65, 106, 128, 1);; border-color: rgba(234, 234, 234, 1); }
+
+/* ====== Add an inner dot when selected ====== */
+.radio-btn:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ====== Hover & Focus states ====== */
+.radio-btn:hover {
+  filter: brightness(1.1);
+}
+
+.radio-btn:focus-visible {
+  outline: 2px solid #555;
+  outline-offset: 2px;
+}
+.calendar-day {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-day:hover {
+  background: #eaeaea;
+}
+
+/* Selected day (blue) */
+.calendar-day.selected {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Days with content (green) */
+.calendar-day.has-content {
+  background-color: #e6f4ea;
+  border-color: #28a745;
+}
+
+/* Weekend (red) */
+.calendar-day.weekend {
+  background-color: #fcebea;
+  border-color: #dc3545;
+}
+
+/* Today highlight (outline) */
+.calendar-day.today {
+  box-shadow: 0 0 0 2px #007bff inset;
+  font-weight: 600;
+}
+
+
 
 /* --- Accordion for other downloads --- */
 .calendar-download-details {
@@ -1647,6 +1769,8 @@ ul li {
 }
 .date-picker-wrapper {
     position: relative;
+    margin: 0 auto;
+    max-width: 400px;
     width: 100%;
   }
 
@@ -1757,7 +1881,6 @@ ul li {
     margin: 0 auto;
     color: black;
     line-height: 1;
-    padding-inline: 8.3%;
     z-index: 9999;
   }
   .result-container
@@ -1947,9 +2070,6 @@ font-size: 0.875rem;
     grid-template-columns: repeat(auto-fill, minmax(580px, 1fr));
     gap: 1.5rem;
   }
-  .searchResult{
-    padding-inline: 0;
-  }
 }
  
 
@@ -1984,7 +2104,6 @@ font-size: 0.875rem;
 .assembly-links {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
 }
 
 /* Base styling for cards */
@@ -2012,16 +2131,19 @@ font-size: 0.875rem;
     text-align: left;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .link-card {
     grid-template-columns: auto 1fr auto;
     text-align: left;
   }
   .assembly-card{
-    min-width: 280px;
+    min-width: 0px;
   }
   .assembly-date-card{
     flex-direction: column;
+  }
+  .assembly-links{
+    min-width: 0px;
   }
   .secondContainer{
     padding-bottom: 120px;
@@ -2032,7 +2154,6 @@ font-size: 0.875rem;
 @media (min-width: 768px) {
   .assembly-links {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
   }
 
   .assembly-card {
@@ -2078,5 +2199,49 @@ font-size: 0.875rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+/* ====== 🌐 Responsive Inline Padding Utility ====== */
+
+/* Base: Mobile-first */
+.px-responsive {
+  padding-inline: 1rem; /* ~16px */
+}
+@media (max-width: 480px) {
+  .px-responsive {
+    padding-inline: 1rem; /* ~32px */
+  }
+}
+@media (max-width: 600px) {
+  .px-responsive {
+    padding-inline: 2rem; /* ~32px */
+  }
+}
+/* Tablets (≥640px) */
+@media (min-width: 640px) {
+  .px-responsive {
+    padding-inline: 2rem; /* ~32px */
+  }
+}
+
+/* Small laptops (≥1024px) */
+@media (min-width: 1024px) {
+  .px-responsive {
+    padding-inline: 3rem; /* ~48px */
+  }
+}
+
+/* Large desktops (≥1440px) */
+@media (min-width: 1440px) {
+  .px-responsive {
+    padding-inline: 5rem; /* ~64px */
+  }
+}
+
+/* Ultrawide (≥1920px) */
+@media (min-width: 1920px) {
+  .px-responsive {
+    padding-inline: 6rem; /* ~96px */
+  }
+}
+
 
 
