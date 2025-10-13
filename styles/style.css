@@ -746,19 +746,19 @@ body {
   gap: 0.25rem;
   justify-content: flex-end;
 }
-.searchLeft .searchBox
-{
+.searchLeft .searchBox {
   margin-top: 20px;
   width: 100%;
-  aspect-ratio: 3.56/1;
-  border-radius: 1.25rem;
-  background-color:#F4F4F4;
-  border: 1px solid #D2D2D2;
+  aspect-ratio: 3.56 / 1;
   padding: 1.75rem;
+  border: 1px solid #d2d2d2;
+  border-radius: 1.25rem;
+  background: #f4f4f4;
   position: relative;
   z-index: 9999;
-
+  box-sizing: border-box;
 }
+
 .searchBox form {
   display: flex;
   flex-direction: column;
@@ -782,27 +782,53 @@ body {
 
 .searchBox label {
   font-weight: 600;
-  color: black;
+  color: #000;
   margin-bottom: 0.4rem;
+  font-size: 0.95rem;
 }
-
 .searchBox input[type="text"],
 .searchBox input[type="date"],
 .searchBox select {
   padding: 0.6rem 0.8rem;
-  border-radius: 2rem;
-  border: 1px solid #d2d2d2;
-  background-color: #fff;
   font-size: 1rem;
+  border: 1px solid #d2d2d2;
+  border-radius: 2rem;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchBox select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 6px;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M2 4l4 4 4-4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 0.8rem;
+  cursor: pointer;
+}
+
+.searchBox input:focus,
+.searchBox select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.searchBox select:hover {
+  border-color: #888;
 }
 
 .searchBox .houseOptions {
   display: flex;
   gap: 1rem;
-  background: #fff;
-  border-radius: 2.75rem;
   padding: 0.5rem 0.8rem;
   border: 1px solid #d2d2d2;
+  border-radius: 2.75rem;
+  background: #fff;
 }
 
 .searchBox .houseOptions label {
@@ -810,27 +836,71 @@ body {
   align-items: center;
   gap: 0.3rem;
   cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
 }
 
+/* === Search Button === */
 .searchBox .searchBtn {
-  background-color: #102d3d;
-  color: #fff;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 2rem;
-  font-size: 1rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  transition: 0.2s;
-  min-width: 200px;
+  min-width: 25%;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2rem;
+  background: #102d3d;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .searchBox .searchBtn:hover {
-  background-color: #1a3f56;
+  background: #1a3f56;
 }
+
+@media (prefers-color-scheme: dark) {
+  .searchBox {
+    background: #203643;
+  }
+
+  .searchBox label,
+  .searchBox .houseOptions label {
+    color: #eee;
+  }
+
+  .searchBox input,
+  .searchBox select {
+    background-color: #203643;
+    border-color: #555;
+    color: #fff;
+  }
+
+  .searchBox select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='12' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M2 4l4 4 4-4z'/></svg>");
+  }
+
+  .searchBox .searchBtn {
+    background: #0d2432;
+  }
+
+  .searchBox .searchBtn:hover {
+    background: #17405a;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBox {
+    padding: 1.25rem;
+  }
+  .searchBox .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 .houseOptions input[type="radio"]:checked + * {
   background-color: rgba(24, 49, 62, 1);
   color: white;
@@ -1890,7 +1960,7 @@ ul li {
   }
   .super-head-title
   {
-    padding-right: 2.5rem;
+    padding-right: 1.75rem;
     position: relative;
   }
    .super-head-title h2
