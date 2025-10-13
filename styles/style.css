@@ -1054,6 +1054,7 @@ html {
 .calendar-sidebar {
   width: 30.33%;
   flex-shrink: 0;
+  min-width: 280px;
 }
 
 .calendar-content {
