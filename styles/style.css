@@ -1820,11 +1820,12 @@ ul li {
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
     gap: 0.25rem;
+    position: relative;
+    z-index: 9999;
   }
 
   .day-name {
     font-weight: 600;
-    color: #6b7280;
     font-size: 0.85rem;
   }
 
@@ -1951,6 +1952,7 @@ ul li {
   display: flex;
   flex-direction: column;
   margin: 0;
+  cursor: pointer;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1.875rem;
@@ -1998,6 +2000,7 @@ font-size: 0.875rem;
   border: 1px solid rgba(113, 145, 162, 0.2);
   border-radius: 1.25rem;
   padding: 1.25rem;
+  cursor: pointer;
   margin: 0;
 }
 .pop-icon
@@ -2025,9 +2028,9 @@ font-size: 0.875rem;
   margin: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .result-grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1.5rem;
   }
 }

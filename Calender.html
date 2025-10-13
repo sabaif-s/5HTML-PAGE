@@ -332,8 +332,11 @@
     // Update header
     monthYear.textContent = `${monthNames[month]} ${year}`;
 
-    // Clear previous days
-    calendarGrid.innerHTML = "";
+    // Clear previous day buttons but keep day-name headers
+    const dayNameCount = 7;
+    while (calendarGrid.children.length > dayNameCount) {
+      calendarGrid.removeChild(calendarGrid.lastChild);
+    }
 
     // Date info
     const firstDay = new Date(year, month, 1);
@@ -421,6 +424,7 @@
   renderCalendar();
   calendar.classList.add("show"); // always visible
 </script>
+
 
 
 
