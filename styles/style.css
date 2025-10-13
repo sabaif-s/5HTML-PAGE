@@ -723,7 +723,6 @@ body {
   max-width: 1920px;
   top: 20rem;
   margin: 0 auto;
-  padding-inline: 8.3%;
   padding-block: 4rem;
 }
 .searchLeft
@@ -968,18 +967,12 @@ body {
 }
 .footer-icon
 {
-  position: absolute;
+  position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: 9999;
 }
  
-
-/* Small tablets and large phones */
-@media (max-width: 768px) {
-  .footer-icon{
-    bottom: 90px;
-  }
-}
 
 /* Mobile */
 @media (max-width: 480px) {
