@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Dashboard</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+   <div class="dashboard-container" >
+     <!-- Sidebar toggles -->
+  <input type="checkbox" id="menu-toggle">
+  <input type="checkbox" id="collapse-toggle">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <label for="collapse-toggle" class="collapse-btn">⫶</label>
+    <div>
+      <h2 class="logo"><span class="logo-text">Anguilla Hansard</span></h2>
+      <button class="btn sitting">+ New Sitting</button>
+      <nav class="menu">
+        <span class="menu-span" >MENU</span>
+        <a href="#" class="active"><span><svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.55556 5.16667C8.33519 5.16667 8.15059 5.092 8.00178 4.94267C7.85296 4.79333 7.7783 4.60874 7.77778 4.38889V1.27778C7.77778 1.05741 7.85245 0.872815 8.00178 0.724C8.15111 0.575185 8.3357 0.500519 8.55556 0.5H13.2222C13.4426 0.5 13.6274 0.574667 13.7768 0.724C13.9261 0.873333 14.0005 1.05793 14 1.27778V4.38889C14 4.60926 13.9253 4.79411 13.776 4.94345C13.6267 5.09278 13.4421 5.16719 13.2222 5.16667H8.55556ZM0.777778 8.27778C0.557407 8.27778 0.372815 8.20311 0.224 8.05378C0.0751853 7.90445 0.000518519 7.71985 0 7.5V1.27778C0 1.05741 0.0746668 0.872815 0.224 0.724C0.373333 0.575185 0.557926 0.500519 0.777778 0.5H5.44445C5.66482 0.5 5.84967 0.574667 5.999 0.724C6.14833 0.873333 6.22274 1.05793 6.22222 1.27778V7.5C6.22222 7.72037 6.14756 7.90522 5.99822 8.05456C5.84889 8.20389 5.6643 8.2783 5.44445 8.27778H0.777778ZM8.55556 14.5C8.33519 14.5 8.15059 14.4253 8.00178 14.276C7.85296 14.1267 7.7783 13.9421 7.77778 13.7222V7.5C7.77778 7.27963 7.85245 7.09504 8.00178 6.94622C8.15111 6.79741 8.3357 6.72274 8.55556 6.72222H13.2222C13.4426 6.72222 13.6274 6.79689 13.7768 6.94622C13.9261 7.09556 14.0005 7.28015 14 7.5V13.7222C14 13.9426 13.9253 14.1274 13.776 14.2768C13.6267 14.4261 13.4421 14.5005 13.2222 14.5H8.55556ZM0.777778 14.5C0.557407 14.5 0.372815 14.4253 0.224 14.276C0.0751853 14.1267 0.000518519 13.9421 0 13.7222V10.6111C0 10.3907 0.0746668 10.2061 0.224 10.0573C0.373333 9.90852 0.557926 9.83385 0.777778 9.83333H5.44445C5.66482 9.83333 5.84967 9.908 5.999 10.0573C6.14833 10.2067 6.22274 10.3913 6.22222 10.6111V13.7222C6.22222 13.9426 6.14756 14.1274 5.99822 14.2768C5.84889 14.4261 5.6643 14.5005 5.44445 14.5H0.777778Z" fill="#18313E"/>
+</svg>
+</span> <span>Dashboard</span></a>
+      </nav>
+    </div>
+    <div class="user">
+        <div class="names" >
+           <label for="menu-toggle" class="avatar">H</label>
+      <p>Hansard<br><small>Admin</small></p>
+        </div>
+        <div class="logout" >
+             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.616 16.5C1.15533 16.5 0.771 16.346 0.463 16.038C0.155 15.73 0.000666667 15.3453 0 14.884V2.116C0 1.65533 0.154333 1.271 0.463 0.963C0.771667 0.655 1.156 0.500667 1.616 0.5H8.019V1.5H1.616C1.462 1.5 1.32067 1.564 1.192 1.692C1.06333 1.82 0.999333 1.96133 1 2.116V14.885C1 15.0383 1.064 15.1793 1.192 15.308C1.32 15.4367 1.461 15.5007 1.615 15.5H8.019V16.5H1.616ZM12.462 12.039L11.76 11.319L14.079 9H5.192V8H14.079L11.759 5.68L12.461 4.962L16 8.5L12.462 12.039Z" fill="#18313E"/>
+</svg>
+  <a href="#">
+  <span class="logout-span" >Log out</span></a>
+        </div>
+     
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <label for="menu-toggle" class="overlay"></label>
+
+  <!-- Hamburger -->
+  <label for="menu-toggle" class="menu-btn">☰</label>
+
+  <!-- Main Content -->
+  <main class="content">
+    <header class="header">
+      <h1>Dashboard</h1>
+      <button class="btn sitting">+ New Sitting</button>
+    </header>
+
+    <div class="stats">
+      <div class="card"><span>Sittings</span><strong>7</strong></div>
+      <div class="card"><span>Published</span><strong>3</strong></div>
+      <div class="card"><span>Drafts</span><strong>4</strong></div>
+      <div class="card"><span>Processing</span><strong>0</strong></div>
+    </div>
+
+    <section class="table-section">
+      <h2>Sittings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>SITTING DATE</th>
+            <th>STATUS</th>
+            <th>STATE</th>
+            <th>ACTIONS</th>
+            <th>RAW TRANSCRIPTS</th>
+            <th>HANSARD REPORT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag date">2025-01-02</span></td>
+            <td><span class="tag ready">Ready to Generate</span></td>
+            <td><button class="btn publish">Publish</button></td>
+              
+            <td><span class="tag draft">Draft</span><span class="tag noupload">No Upload</span></td>
+             <td><span class="eye-icon"></span>
+         <span class="download-icon"></span>
+</td>
+   <td><span class="eye-icon"></span>
+         <span class="download-icon"></span>
+</td>
+          
+          </tr>
+           <tr>
+            <td><span class="tag date">2025-01-02</span></td>
+            <td><span class="tag ready">Ready to Generate</span></td>
+            <td><button class="btn publish">Publish</button></td>
+              
+            <td><span class="tag draft">Draft</span><span class="tag noupload">No Upload</span></td>
+            <td><span class="eye-icon"></span>
+         <span class="download-icon"></span>
+</td>
+           
+              <td><span class="eye-icon"></span>
+         <span class="download-icon"></span>
+</td>
+          
+          </tr>
+          <tr>
+            <td><span class="tag date">2025-01-02</span></td>
+            <td><span class="tag published">Published</span></td>
+            <td><span class="tag ready">Ready to Generate</span></td>
+            <td>
+              <button class="btn publish">Publish</button>
+              <button class="btn move">Move to Draft</button>
+               <button class="btn upload"> <span class="upload-icon"></span> Upload File</button>
+            </td>
+          </tr>
+        
+         
+        </tbody>
+      </table>
+    </section>
+  </main>
+   </div>
+
+</body>
+</html>
