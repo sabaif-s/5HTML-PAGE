@@ -129,6 +129,8 @@ body {
   display: flex;
   justify-content: center;
   padding-top: calc(var(--grid-size) / 2);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .top-bar-inner {
@@ -691,6 +693,8 @@ body {
   align-items: center;
   justify-content: flex-start;
   transform: rotate(0deg);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .custom-box p
 {
@@ -728,6 +732,8 @@ body {
   display: flex;
   aspect-ratio: 3.4/1;
   flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .searchLeft .find
 {
@@ -2036,7 +2042,7 @@ ul li {
   {
     position: relative;
     width: 100%;
-    max-width: 1920px;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -2048,6 +2054,7 @@ ul li {
     color: black;
     line-height: 1;
     z-index: 9999;
+    margin: 0 auto;
   }
   .result-container
   {
@@ -2132,6 +2139,8 @@ ul li {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1.875rem;
+  max-width: 590px;
+  margin: 0 auto;
 }
 .result-card-head {
   width: 100%;
@@ -2177,7 +2186,9 @@ font-size: 0.875rem;
   border-radius: 1.25rem;
   padding: 1.25rem;
   cursor: pointer;
-  margin: 0;
+  width: 100%;
+  max-width: 590px;
+   margin: 0 auto;
 }
 .pop-icon
 {
@@ -2400,14 +2411,14 @@ font-size: 0.875rem;
 /* Large desktops (≥1440px) */
 @media (min-width: 1440px) {
   .px-responsive {
-    padding-inline: 5rem; /* ~64px */
+    padding-inline: 0rem; /* ~64px */
   }
 }
 
 /* Ultrawide (≥1920px) */
 @media (min-width: 1920px) {
   .px-responsive {
-    padding-inline: 6rem; /* ~96px */
+    padding-inline: 0rem; /* ~96px */
   }
 }
 
@@ -2829,7 +2840,9 @@ Dashboard css
         display: none;
       }
     }
-    
+    .help-span{
+      color: white;
+    }
 
 
 
