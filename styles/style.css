@@ -1929,22 +1929,18 @@ body {
     font-size: 0.9rem;
   }
 }
-/* --- Remove default link styles inside list items --- */
+ 
 ul li a {
   text-decoration: none;
-  color: inherit;            /* Use same color as parent text */
-  display: block;            /* Make it fill the li area for better click */
+  color: inherit;           
+  display: block;         
   width: 100%;
   padding: 0.25rem 0;
 }
-
-/* Optional hover feedback (soft background) */
 ul li a:hover {
-  background-color: rgba(24, 49, 62, 0.05); /* light hover shade */
+  background-color: rgba(24, 49, 62, 0.05); 
   border-radius: 4px;
 }
-
-/* Optional: keep consistent spacing for non-links too */
 ul li {
   list-style: none;
   padding: 0.25rem 0;
@@ -2124,12 +2120,10 @@ ul li {
 }
 .result-grid-container {
   display: grid;
-  justify-content: flex-start; /* centers grid when extra space exists */
+  justify-content: flex-start; 
   gap: 1rem;
   width: 100%;
   margin: 0 auto;
-
-  /* two cards per row when screen ≥ 1200px */
   grid-template-columns: repeat(auto-fill, minmax(300px, 580px));
 }
 .result-card {
@@ -2854,13 +2848,10 @@ font-size: 0.875rem;
     }
 
     .btn.publish { color: var(--accent-green);  border-color: var(--accent-green); }
-    .btn.publish:hover { background: var(--accent-green); color: #fff; }
 
     .btn.move { color: #666; border-color: #ccc; }
-    .btn.move:hover { background: #ccc; color: #000; }
 
     .btn.upload { color: var(--accent-blue); border-color: var(--accent-blue); }
-    .btn.upload:hover { background: var(--accent-blue); color: #fff; }
     @media (max-width: 768px) {
   .stats {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
