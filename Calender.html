@@ -22,8 +22,7 @@
     </div>
   </header>
 
-  <main class="calendar-main px-responsive">
-    <h2 class="calendar-page-title">Hansard</h2>
+  <main class="calendar-main">
 
     <div class="calendar-layout">
       <!-- Sidebar -->
@@ -34,17 +33,30 @@
 
           <!-- Calendar grid -->
         <div class="calendar-wrapper">
-    <!-- Date input -->
-   
-
-    <!-- Calendar layout -->
    
    <div class="date-picker-wrapper">
   <input  type="text" style="visibility: hidden;" id="dateInput" readonly placeholder="Select a date" />
   <div class="calendar" id="calendar">
     <div class="calendar-header-picker">
       <button id="prevMonth">‹</button>
-      <div> <h2 id="monthYear"></h2></div>
+      <div class="month-selector">
+  <h2 id="monthYear" class="month-year-btn">
+    September 2025 
+    <span class="icon-chevron-down"></span>
+  </h2>
+  <div id="monthPicker" class="month-picker hidden">
+    <div class="month-picker-header">
+      <button id="prevYear">‹</button>
+      <span id="yearDisplay">2025</span>
+      <button id="nextYear">›</button>
+    </div>
+    <div class="month-grid">
+      <button>Jan</button><button>Feb</button><button>Mar</button><button>Apr</button>
+      <button>May</button><button>Jun</button><button>Jul</button><button>Aug</button>
+      <button>Sep</button><button>Oct</button><button>Nov</button><button>Dec</button>
+    </div>
+  </div>
+</div>
       <button id="nextMonth">›</button>
     </div>
     <div class="calendar-grid" id="calendarGrid">
@@ -63,15 +75,15 @@
         <div class="calendar-legend">
   <div class="calendar-legend">
   <label>
-    <input type="radio" name="calendar-legend" class="calendar-dot  radio-btn blue" checked>
+    <input type="radio" name="calendar-legend" class="calendar-dot  radio-btn selectedDate" checked>
     Selected day
   </label>
   <label>
-    <input type="radio" name="calendar-legend" class="calendar-dot calendar-content radio-btn green">
+    <input type="radio" name="calendar-legend" class="calendar-dot calendar-content radio-btn selectedContent">
     Days with content
   </label>
   <label>
-    <input type="radio" name="calendar-legend" class="calendar-dot calendar-weekend radio-btn red" >
+    <input type="radio" name="calendar-legend" class="calendar-dot calendar-weekend radio-btn selectedWeekend" >
     Weekend
   </label>
 </div>
@@ -124,14 +136,15 @@
       <!-- Main content -->
       <section class="calendar-content">
         <div class="custom-note" >
-     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.5 14H9.5V8.5H8.5V14ZM9 7.077C9.17467 7.077 9.321 7.018 9.439 6.9C9.557 6.782 9.61567 6.63567 9.615 6.461C9.61433 6.28633 9.55533 6.14033 9.438 6.023C9.32067 5.90567 9.17467 5.84667 9 5.846C8.82533 5.84533 8.67933 5.90433 8.562 6.023C8.44467 6.14167 8.38567 6.288 8.385 6.462C8.38433 6.636 8.44333 6.782 8.562 6.9C8.68067 7.018 8.82667 7.077 9 7.077ZM9.003 18.5C7.75833 18.5 6.58833 18.264 5.493 17.792C4.39767 17.3193 3.44467 16.678 2.634 15.868C1.82333 15.058 1.18167 14.106 0.709 13.012C0.236333 11.918 0 10.7483 0 9.503C0 8.25767 0.236333 7.08767 0.709 5.993C1.181 4.89767 1.82133 3.94467 2.63 3.134C3.43867 2.32333 4.391 1.68167 5.487 1.209C6.583 0.736333 7.753 0.5 8.997 0.5C10.241 0.5 11.411 0.736333 12.507 1.209C13.6023 1.681 14.5553 2.32167 15.366 3.131C16.1767 3.94033 16.8183 4.89267 17.291 5.988C17.7637 7.08333 18 8.253 18 9.497C18 10.741 17.764 11.911 17.292 13.007C16.82 14.103 16.1787 15.056 15.368 15.866C14.5573 16.676 13.6053 17.3177 12.512 17.791C11.4187 18.2643 10.249 18.5007 9.003 18.5ZM9 17.5C11.2333 17.5 13.125 16.725 14.675 15.175C16.225 13.625 17 11.7333 17 9.5C17 7.26667 16.225 5.375 14.675 3.825C13.125 2.275 11.2333 1.5 9 1.5C6.76667 1.5 4.875 2.275 3.325 3.825C1.775 5.375 1 7.26667 1 9.5C1 11.7333 1.775 13.625 3.325 15.175C4.875 16.725 6.76667 17.5 9 17.5Z" fill="white"/>
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.5 13.5H9.5V8H8.5V13.5ZM9 6.577C9.17467 6.577 9.321 6.518 9.439 6.4C9.557 6.282 9.61567 6.13567 9.615 5.961C9.61433 5.78633 9.55533 5.64033 9.438 5.523C9.32067 5.40567 9.17467 5.34667 9 5.346C8.82533 5.34533 8.67933 5.40433 8.562 5.523C8.44467 5.64167 8.38567 5.788 8.385 5.962C8.38433 6.136 8.44333 6.282 8.562 6.4C8.68067 6.518 8.82667 6.577 9 6.577ZM9.003 18C7.75833 18 6.58833 17.764 5.493 17.292C4.39767 16.8193 3.44467 16.178 2.634 15.368C1.82333 14.558 1.18167 13.606 0.709 12.512C0.236333 11.418 0 10.2483 0 9.003C0 7.75767 0.236333 6.58767 0.709 5.493C1.181 4.39767 1.82133 3.44467 2.63 2.634C3.43867 1.82333 4.391 1.18167 5.487 0.709C6.583 0.236333 7.753 0 8.997 0C10.241 0 11.411 0.236333 12.507 0.709C13.6023 1.181 14.5553 1.82167 15.366 2.631C16.1767 3.44033 16.8183 4.39267 17.291 5.488C17.7637 6.58333 18 7.753 18 8.997C18 10.241 17.764 11.411 17.292 12.507C16.82 13.603 16.1787 14.556 15.368 15.366C14.5573 16.176 13.6053 16.8177 12.512 17.291C11.4187 17.7643 10.249 18.0007 9.003 18ZM9 17C11.2333 17 13.125 16.225 14.675 14.675C16.225 13.125 17 11.2333 17 9C17 6.76667 16.225 4.875 14.675 3.325C13.125 1.775 11.2333 1 9 1C6.76667 1 4.875 1.775 3.325 3.325C1.775 4.875 1 6.76667 1 9C1 11.2333 1.775 13.125 3.325 14.675C4.875 16.225 6.76667 17 9 17Z" fill="#18313E"/>
 </svg>
+
         <p class="calendar-update-note">
           From the corrected (daily) version. Last updated 12 September 2025 at 3.28pm.
         </p>
         </div>
-        <h3 style="color: rgb(155, 154, 154);" >Commons Hansard <br> <span style="color: black;"> for 1 September 2025</span></h3>
+        <h3  style="color: rgb(155, 154, 154);" >Commons Hansard <br> <span style="color: black;"> for 1 September 2025</span></h3>
 
              
    <div class="calendar-accordion">
@@ -313,8 +326,9 @@
   const nextMonthBtn = document.getElementById("nextMonth");
 
   // === State ===
-  let currentDate = new Date();  // current visible month
-  let selectedDate = new Date(); // selected day
+  // 👇 Start calendar from September 2025
+  let currentDate = new Date(2025, 8, 1); // Months are 0-based → 8 = September
+  let selectedDate = new Date(2025, 8, 1); // Default selected day (Sept 1, 2025)
 
   // Example: days that have content
   const contentDays = [3, 7, 12, 15, 22];
@@ -325,12 +339,12 @@
     const month = currentDate.getMonth();
 
     const monthNames = [
-      "January","February","March","April","May","June",
-      "July","August","September","October","November","December"
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
     ];
 
     // Update header
-    monthYear.textContent = `${monthNames[month]} ${year}`;
+    monthYear.innerHTML = `${monthNames[month]} ${year} <span class="icon-chevron-down"></span>`;
 
     // Clear previous day buttons but keep day-name headers
     const dayNameCount = 7;
@@ -358,6 +372,7 @@
 
       const thisDate = new Date(year, month, i);
       const today = new Date();
+      today.setHours(0, 0, 0, 0); // normalize time
 
       // === Highlight today ===
       if (
@@ -377,6 +392,11 @@
       // === Highlight days with content ===
       if (contentDays.includes(i)) {
         btn.classList.add("has-content");
+      }
+
+      // === Highlight future dates ===
+      if (thisDate > today) {
+        btn.classList.add("future-date");
       }
 
       // === Highlight selected date ===
@@ -420,10 +440,55 @@
   });
 
   // === Initialize ===
+  // === Month-Year Picker ===
+const monthPicker = document.getElementById("monthPicker");
+const yearDisplay = document.getElementById("yearDisplay");
+const monthYearBtn = document.getElementById("monthYear");
+const prevYearBtn = document.getElementById("prevYear");
+const nextYearBtn = document.getElementById("nextYear");
+
+monthYearBtn.addEventListener("click", () => {
+  monthPicker.classList.toggle("hidden");
+  yearDisplay.textContent = currentDate.getFullYear();
+  highlightCurrentMonth();
+});
+
+function highlightCurrentMonth() {
+  const monthBtns = monthPicker.querySelectorAll(".month-grid button");
+  monthBtns.forEach((btn, idx) => {
+    btn.classList.toggle("active", idx === currentDate.getMonth());
+  });
+}
+
+monthPicker.querySelectorAll(".month-grid button").forEach((btn, idx) => {
+  btn.addEventListener("click", () => {
+    currentDate = new Date(parseInt(yearDisplay.textContent), idx, 1);
+    selectedDate = new Date(currentDate);
+    renderCalendar();
+    monthPicker.classList.add("hidden");
+  });
+});
+
+prevYearBtn.addEventListener("click", () => {
+  yearDisplay.textContent = parseInt(yearDisplay.textContent) - 1;
+});
+
+nextYearBtn.addEventListener("click", () => {
+  yearDisplay.textContent = parseInt(yearDisplay.textContent) + 1;
+});
+
+// Hide picker when clicking outside
+document.addEventListener("click", (e) => {
+  if (!monthPicker.contains(e.target) && !monthYearBtn.contains(e.target)) {
+    monthPicker.classList.add("hidden");
+  }
+});
+
   updateInput();
   renderCalendar();
   calendar.classList.add("show"); // always visible
 </script>
+
 
 
 
