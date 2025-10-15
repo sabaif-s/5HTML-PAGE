@@ -2377,7 +2377,7 @@ font-size: 0.875rem;
 
 .dashboard-wrapper{
       background: #f7f8fa;
-      min-height: 100vh;
+      height: 100vh;
 }
 @media (min-width: 1920px) {
   .px-responsive {
@@ -2853,6 +2853,76 @@ font-size: 0.875rem;
   position: relative;
   z-index: 1;
 }
+/*  Large Screen Dashboard */
 
+@media (min-width: 1920px) {
+  .dashboard-wrapper {
+    width: 100%;
+    padding: 4rem;
+     margin: 0 auto;
+  }
+  .content,.table-section{
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
+  header.header h1 {
+    font-size: 2.5rem;
+  }
+
+  .stats .card {
+    padding: 2.5rem;
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 1.1rem;
+  }
+
+  th, td {
+    padding: 1.5rem 2rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .tag {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .dashboard-wrapper {
+    max-width: 2200px;
+    margin: 0 auto;
+  }
+  .table-section,.content{
+    max-width: 1920px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  table {
+    font-size: 1.25rem;
+  }
+
+  th, td {
+    padding: 1.75rem 2.25rem;
+  }
+
+  header.header h1 {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    padding: 1rem 1.75rem;
+  }
+}
 
