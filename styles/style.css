@@ -887,8 +887,6 @@ body {
 .searchBox input:focus,
 .searchBox select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
 }
 
 .searchBox select:hover {
@@ -1412,7 +1410,7 @@ body {
   height: 17px;
   border: 2px solid #f1f4f5;
   border-radius: 50%;
-  background-color: #f9f7f7;
+  background-color:white;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-block;
