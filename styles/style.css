@@ -1034,6 +1034,13 @@ body {
   bottom: 20px;
   z-index: 9999;
 }
+@media (min-width: 2560px) {
+  .footer-icon
+{
+  position: absolute;
+}
+}
+
 
 @media (max-width: 480px) {
   .searchLeft .find {
