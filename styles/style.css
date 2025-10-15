@@ -423,16 +423,19 @@ body {
  
 
 .assembly-title {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: 600;
   color: #203643;
-  margin-bottom: 0.5rem;
+  line-height: 100%;
+  margin-top: 1rem;
 }
 
 .assembly-desc {
   color: rgba(32, 54, 67, 0.8);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 130%;
+  margin-block: 1rem;
 }
 
 .assembly-date-card {
@@ -534,50 +537,17 @@ body {
   line-height: 1.5;
 }
 
-.link-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  position: relative;
-  background-color: #ffffff;
-  border-radius: 1rem;
-  padding: 1.5rem 1.25rem 1.5rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(32, 54, 67, 0.06);
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-  height: 100%;
-}
-
-.link-card:hover {
-  background-color: #eef2f4;
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(32, 54, 67, 0.1);
-}
-
-.link-card svg:first-child {
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-}
-
-.link-card h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #203643;
-  margin-bottom: 0.25rem;
-}
-
-.link-card p {
-  font-size: 0.875rem;
-  color: #4b6777;
-  line-height: 1.5;
-  max-width: 92%;
-}
 
 .arrow-info {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 16px;
+  right: 16px;
+  transition: transform 0.25s ease;
+}
+.info-icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -2270,18 +2240,41 @@ font-size: 0.875rem;
   display: grid;
   grid-template-columns: 1fr;
 }
-
- 
 .link-card {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 1rem;
+  position: relative;
+   gap: 1rem;
   padding: 1rem;
+  position: relative;
   background: #fff;
   border-radius: 0.75rem;
   border: 1px solid #e4e4e4;
   transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.link-card > div:nth-child(2) {
+  position: relative;
+  width: 100%;
+}
+
+.link-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #203643;
+  margin-bottom: 0.25rem;
+  margin-top: 40px;
+  line-height: 23px;
+}
+
+.link-card p {
+  font-size: 14px;
+  color: #4b6777;
+  line-height: normal;
 }
 
 .link-card:hover {
@@ -2289,18 +2282,7 @@ font-size: 0.875rem;
   transform: translateY(-2px);
 }
 
- 
-@media (min-width: 520px) {
-  .link-card {
-    grid-template-columns: auto 1fr auto;
-    text-align: left;
-  }
-}
 @media (max-width: 600px) {
-  .link-card {
-    grid-template-columns: auto 1fr auto;
-    text-align: left;
-  }
   .assembly-card{
     min-width: 0px;
   }
@@ -2356,10 +2338,6 @@ font-size: 0.875rem;
 @media (min-width: 1920px) {
   .assembly-card {
     max-width: 650px;
-  }
-
-  .assembly-links {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
  
