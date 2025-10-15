@@ -811,6 +811,9 @@ body {
   justify-content: space-between;
   gap: 1rem;
 }
+.row.second{
+  align-items: flex-end;
+}
 .searchBox .row .field {
   flex: 1 1 auto;
   min-width: 250px;
