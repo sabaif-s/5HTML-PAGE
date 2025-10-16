@@ -385,15 +385,14 @@ body {
 }
  
 .assembly-card {
-   
   border-radius: 1rem;
-   height: 100%;
   overflow: hidden;
   display: flex;
   position: relative;
   flex-direction: column;
-  width: 47.29%;
-  max-width: 650px;
+  flex: 1 1 auto;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 .assembly-image {
@@ -505,8 +504,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 0.5rem;
-  width: 48%;
-  min-width: 550px;
+  flex: 1 1 auto;
   align-items: stretch;
 }
 
@@ -551,14 +549,12 @@ body {
   border-radius: 1.25rem;
   background-color: rgba(244, 244, 244, 1);
   padding: 1.25rem;
-  min-height: 400px;
-   display: flex;
-  flex-wrap: wrap;
+  display: flex;
+  gap: 40px;
   width: 100%;
-  gap: 2rem;
-  align-items: flex-start;
-  justify-content: center;
-    max-width: 1200px;
+  align-items: stretch;
+  justify-content: space-between;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -567,6 +563,7 @@ body {
   .wrapper,.secondContainer {
      padding-inline: 3.5rem;
   }
+
 }
 @media screen and (max-width: 1024px) {
   .wrapper,.secondContainer {
@@ -584,13 +581,27 @@ body {
     left: 35px;
   }
 }
+@media (max-width: 1000px) {
+    .secondWrapper{
+    flex-wrap: wrap;
+  }
+  .assembly-title{
+    font-size: 1.5rem;
+  }
+  .assembly-links-intro{
+    text-align: center;
+  }
+}
+ 
 /* Mobile */
 @media (max-width: 768px) {
    .wrapper,.secondContainer {
     width: 100%;
     padding-inline: 4%;
   }
-  
+  .secondWrapper{
+    flex-wrap: wrap;
+  }
 
   .title {
     text-align: center;
@@ -977,8 +988,8 @@ body {
 .footer-icon
 {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 15px;
+  bottom: 15px;
   z-index: 9999;
 }
 @media (min-width: 2560px) {
@@ -2186,17 +2197,6 @@ font-size: 0.875rem;
   padding: 1rem;
 }
 
-.secondWrapper {
-  display: grid;
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.assembly-card,
-.assembly-links {
-  width: 100%;
-}
-
  
 .assembly-links {
   display: grid;
@@ -2215,7 +2215,7 @@ font-size: 0.875rem;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  max-width: 300px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -2245,15 +2245,10 @@ font-size: 0.875rem;
 }
 
 @media (max-width: 600px) {
-  .assembly-card{
-    min-width: 0px;
-  }
   .assembly-date-card{
     flex-direction: column;
   }
-  .assembly-links{
-    min-width: 0px;
-  }
+  
   .secondContainer{
     padding-bottom: 120px;
   }
@@ -2263,36 +2258,6 @@ font-size: 0.875rem;
 @media (min-width: 768px) {
   .assembly-links {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .assembly-card {
-    max-width: 550px;
-    margin-inline: auto;
-  }
-
-  .secondWrapper {
-    padding: 1.5rem;
-  }
-}
-
- 
-@media (min-width: 1024px) {
-  .secondWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  .assembly-card {
-    max-width: 550px;
-    justify-self: center;
-  }
-
-  .assembly-links {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    align-self: start;
   }
 }
 
@@ -2306,16 +2271,17 @@ font-size: 0.875rem;
 .px-responsive {
   padding-inline: 1rem;  
 }
-@media (max-width: 480px) {
-  .px-responsive {
-    padding-inline: 1rem;  
-  }
-}
 @media (max-width: 600px) {
   .px-responsive {
     padding-inline: 2rem; 
   }
 }
+@media (max-width: 480px) {
+  .px-responsive {
+    padding-inline: 1rem;  
+  }
+}
+
  
 @media (min-width: 640px) {
   .px-responsive {
