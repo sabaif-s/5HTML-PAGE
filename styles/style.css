@@ -213,7 +213,7 @@ body {
 }
 
 .title {
-  font-size: 6.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.1;
   color: #fff;
@@ -677,7 +677,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.625rem;
   position: relative;
-  top: 1.25rem;
+  top: 70px;
   padding: 0.625rem;
   margin-bottom: 20px;
   gap: 10px;
