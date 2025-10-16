@@ -2394,7 +2394,7 @@ font-size: 0.875rem;
     .content {
       flex: 1;
       background: #f7f8fa;
-      padding: 1.875rem;
+      padding-block: 1.875rem;
       margin-left: var(--sidebar-width);
       transition: margin-left var(--transition);
       display: flex;
@@ -2519,6 +2519,7 @@ font-size: 0.875rem;
       }
       .header{
         padding-inline: 2.5rem;
+        margin-left: 1rem;
       }
     }
 
