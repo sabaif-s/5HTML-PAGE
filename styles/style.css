@@ -2296,13 +2296,6 @@ font-size: 0.875rem;
   }
 }
 
- 
-@media (min-width: 1440px) {
-  .px-responsive {
-    padding-inline: 0rem; 
-  }
-}
-
 .dashboard-wrapper{
       background: #f7f8fa;
       height: 100vh;
