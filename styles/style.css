@@ -9,9 +9,9 @@
      --bg-dark: #1a1a1a;
       --sidebar-bg: #202020;
       --card-bg: #fff;
-      --accent-green: #00b300;
+      --accent-green: #0AC500;
       --accent-blue: #007bff;
-      --accent-purple: #7b2cf3;
+      --accent-purple: #6123A7;
       --border-light: #eee;
       --text-light: #f0f0f0;
       --text-dark: #222;
@@ -2672,16 +2672,15 @@ font-size: 0.875rem;
  {
   transform: scale(1.1);
 }
+ 
 .eye-icon.active {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='30' rx='15' fill='rgba(10,197,0,1)'/%3E%3Cpath d='M15 10.895C19.447 10.895 21.5 15 21.5 15C21.5 15 19.447 19.105 15 19.105C10.553 19.105 8.5 15 8.5 15C8.5 15 10.553 10.895 15 10.895Z' stroke='white' stroke-width='0.929' stroke-linejoin='round'/%3E%3Cpath d='M16.9399 15C16.9459 15.2663 16.8986 15.5312 16.8008 15.779C16.703 16.0268 16.5566 16.2526 16.3704 16.443C16.1841 16.6335 15.9617 16.7848 15.7161 16.8882C15.4706 16.9915 15.2068 17.0447 14.9404 17.0447C14.674 17.0447 14.4103 16.9915 14.1647 16.8882C13.9192 16.7848 13.6968 16.6335 13.5105 16.443C13.3242 16.2526 13.1779 16.0268 13.0801 15.779C12.9823 15.5312 12.935 15.2663 12.9409 15C12.9409 14.4696 13.1516 13.9609 13.5267 13.5858C13.9018 13.2107 14.4105 13 14.9409 13C15.4714 13 15.9801 13.2107 16.3551 13.5858C16.7302 13.9609 16.9409 14.4696 16.9409 15H16.9399Z' stroke='white' stroke-width='0.929' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='30' rx='15' fill='rgba(215, 255, 188, 1)'/%3E%3Cpath d='M15 10.895C19.447 10.895 21.5 15 21.5 15C21.5 15 19.447 19.105 15 19.105C10.553 19.105 8.5 15 8.5 15C8.5 15 10.553 10.895 15 10.895Z' stroke='rgba(0, 146, 37, 1)' stroke-width='0.929' stroke-linejoin='round'/%3E%3Cpath d='M16.9399 15C16.9459 15.2663 16.8986 15.5312 16.8008 15.779C16.703 16.0268 16.5566 16.2526 16.3704 16.443C16.1841 16.6335 15.9617 16.7848 15.7161 16.8882C15.4706 16.9915 15.2068 17.0447 14.9404 17.0447C14.674 17.0447 14.4103 16.9915 14.1647 16.8882C13.9192 16.7848 13.6968 16.6335 13.5105 16.443C13.3242 16.2526 13.1779 16.0268 13.0801 15.779C12.9823 15.5312 12.935 15.2663 12.9409 15C12.9409 14.4696 13.1516 13.9609 13.5267 13.5858C13.9018 13.2107 14.4105 13 14.9409 13C15.4714 13 15.9801 13.2107 16.3551 13.5858C16.7302 13.9609 16.9409 14.4696 16.9409 15H16.9399Z' stroke='rgba(0, 146, 37, 1)' stroke-width='0.929' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
-
 .download-icon.active {
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='30' rx='15' fill='rgba(10,197,0,1)'/%3E%3Cpath d='M15 18.577L11.461 15.039L12.169 14.319L14.5 16.65V8H15.5V16.65L17.83 14.32L18.539 15.039L15 18.577ZM9.616 22C9.15533 22 8.771 21.846 8.463 21.538C8.155 21.23 8.00067 20.8453 8 20.384V17.961H9V20.384C9 20.538 9.064 20.6793 9.192 20.808C9.32 20.9367 9.461 21.0007 9.615 21H20.385C20.5383 21 20.6793 20.936 20.808 20.808C20.9367 20.68 21.0007 20.5387 21 20.384V17.961H22V20.384C22 20.8447 21.846 21.229 21.538 21.537C21.23 21.845 20.8453 21.9993 20.384 22H9.616Z' fill='white'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='30' rx='15' fill='rgba(215, 255, 188, 1)'/%3E%3Cpath d='M15 18.577L11.461 15.039L12.169 14.319L14.5 16.65V8H15.5V16.65L17.83 14.32L18.539 15.039L15 18.577ZM9.616 22C9.15533 22 8.771 21.846 8.463 21.538C8.155 21.23 8.00067 20.8453 8 20.384V17.961H9V20.384C9 20.538 9.064 20.6793 9.192 20.808C9.32 20.9367 9.461 21.0007 9.615 21H20.385C20.5383 21 20.6793 20.936 20.808 20.808C20.9367 20.68 21.0007 20.5387 21 20.384V17.961H22V20.384C22 20.8447 21.846 21.229 21.538 21.537C21.23 21.845 20.8453 21.9993 20.384 22H9.616Z' fill='rgba(0, 146, 37, 1)'/%3E%3C/svg%3E");
 }
-
 
 .eye-icon.inactive,
 .download-icon.inactive {
@@ -2690,9 +2689,9 @@ font-size: 0.875rem;
 }
 
 
-    .tag.draft { background:rgba(255, 252, 216, 1); color: rgba(201, 131, 28, 1) }
+    .tag.draft { background:#FEFAC6; color: #C9831C }
     .tag.published { background: #d9fcd9; color: #008000; }
-    .tag.ready { background: #f0e6ff; color: var(--accent-purple); }
+    .tag.ready { background: #F4EBFF; color: var(--accent-purple); }
     .tag.noupload { background: #f0f0f0; color: #666; }
 
     /* ====== Buttons ====== */
